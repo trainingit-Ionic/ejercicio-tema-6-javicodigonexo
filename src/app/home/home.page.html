@@ -6,6 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  
+<ion-content>
+  <ion-list>
+
+    <ion-item  *ngFor="let user of users">
+      <ion-avatar margin>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+        <ion-label><a lines="inset" href="detail/{{user.id}}/">{{user.name}}&nbsp;-&nbsp;{{user.company.name}}</a></ion-label>
+        <ion-button (click)="llamar(user.phone)"><ion-icon name="call"></ion-icon></ion-button>
+    </ion-item>
+  </ion-list>
+  <div id="elementos"></div>
 </ion-content>

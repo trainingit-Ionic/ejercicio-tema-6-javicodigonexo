@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><ion-nav-pop></ion-nav-pop>Ficha de {{user.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Datos personales</ion-label>
+    </ion-item-divider>
+    <ion-item>Nombre:&nbsp;{{user.name}}</ion-item>
+  <ion-item>Usuario:&nbsp;{{user.username}}</ion-item>
+  <ion-item>Email:&nbsp;{{user.username}}</ion-item>
+  <ion-item>Web:&nbsp;{{user.website}}</ion-item>
+    <br/>
+    <ion-item-divider>
+      <ion-label>Dirección</ion-label>
+    </ion-item-divider>
+      <ion-item>Calle:&nbsp;{{user.address.street}}</ion-item>
+      <ion-item>Piso:&nbsp;{{user.address.suite}}</ion-item>
+      <ion-item>Ciudad:&nbsp;{{user.address.city}}</ion-item>
+      <ion-item>Código Postal:&nbsp;{{user.address.zipcode}}</ion-item>
+      <ion-item>Ubicación:&nbsp;{{user.address.geo.lat}}, {{user.address.geo.lng}}</ion-item>
+    <br/>
+    <ion-item-divider>
+      <ion-label>Empresa</ion-label>
+    </ion-item-divider>
+      <ion-item>Nombre:&nbsp;{{user.company.name}}</ion-item>
+      <ion-item>Eslogan:&nbsp;{{user.company.catchPhrase}}</ion-item>
+      <ion-item>BS:&nbsp;{{user.company.bs}}</ion-item>
+
+  </ion-item-group>
+  <br/>
+
+  <ion-button color="secondary" (click)="llamar(user.phone)"><ion-icon name="call"></ion-icon></ion-button>
+  <ion-button color="light" href="/home/">Volver</ion-button>
+</ion-content>
